@@ -1,4 +1,4 @@
-# Bootloader + Tiny Kernel Architecture
+# Bootloader + Tiny Kernel Architecture (ME and claude)
 
 ## Table of Contents
 1. [System Overview](#system-overview)
