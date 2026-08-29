@@ -1,0 +1,67 @@
+Registers: AX, BX, CX, DX, SI, SP, etc.
+Addressing: mov ax, 0 vs mov ax, [address]
+Segments: CS, DS, ES, SS (confusing but necessary)
+BIOS interrupts: int 0x10 (screen), int 0x13 (disk)
+I/O ports: inb, outb instructions
+
+
+video Memory (0xB8000) byte1 = ascii
+                    byte2  = color (bg and fg)
+
+GDT gendral table for cpu to let it know abt memo Segments (config ah file)
+        2 mods - real and proteced mode -- 
+            real - bootloader -Memory divided into segments (messy)
+                    Addresses calculated: segment * 16 + offseT
+            proteced - kernel - seg premison , what exists 
+
+            GDT (array of 8-byte descriptors):
+                    
+                    │ [0] Null Descriptor (required)  │ 8 bytes
+                    
+                    │ [1] Code Segment (for CPU code)  │ 8 bytes
+                   
+                    │ [2] Data Segment (for data/stack)│ 8 bytes
+                   
+                    │ [3] (optional, not needed)    │ 8 bytes
+                   
+
+BYTE layout - 
+0-1   =  limit  L16
+2-3   =     base L16
+4   = base m8
+5  = access byte
+6-7   = limit H4 and flags
+
+
+Bit 7: Present (1 = descriptor is valid)
+Bit 6: Privilege level (0 = kernel, 3 = user)
+Bit 4: Type (1 = code/data, 0 = system)
+Bit 3: Executable (1 = code, 0 = data)
+Bit 2: Direction (0 = grow up)
+Bit 1: Writable (1 = readable/writable)
+Bit 0: Accessed (0 initially)
+
+
+
+this is bootlodes main j*b
+Protected Mode Switch
+
+CR0 register (control register)
+    PE bit (Protection Enable, bit 0)
+    Far jump (jmp segment:address)
+    Privilege rings (ring 0 = kernel, ring 3 = user)
+
+
+
+
+ A20 Line
+    Why it exists (20th address line issue)
+    How to enable it (port 0x92)
+    What it does (allows addressing >1MB)
+
+we Need ts for protected mode to work
+
+
+
+for kernal we us x86 32-bit Assembly and the big C
+
