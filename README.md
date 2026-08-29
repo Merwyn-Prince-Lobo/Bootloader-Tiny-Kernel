@@ -17,7 +17,7 @@
 
 
 
-note:  hoe to run or work on ts
+note:  how to run or work on ts
 ```
 git clone https://github.com/Merwyn-Prince-Lobo/Bootloader-Tiny-Kernel
 cd Bootloader-Tiny-Kernel
@@ -33,4 +33,15 @@ make --version
 qemu-system-i386 --version
 gdb --version
 
-#
+```
+
+to build and check the build 
+```
+# Build the OS
+make
+
+# Check if os.img was created
+ls -l os.img
+
+# Should show something like: -rw-r--r-- 1 user user 65536 Aug 29 12:34 os.img i think 
+```
