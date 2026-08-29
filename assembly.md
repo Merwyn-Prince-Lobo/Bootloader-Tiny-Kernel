@@ -10,7 +10,7 @@
 7. [I/O Operations](#io-operations)
 8. [Special Instructions](#special-instructions)
 9. [Inline Assembly in C](#inline-assembly-in-c)
-10. [Common Patterns](#common-patterns)
+10.[Common Patterns](#common-patterns)
 
 ---
 
