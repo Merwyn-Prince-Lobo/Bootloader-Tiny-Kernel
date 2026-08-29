@@ -63,5 +63,6 @@ we Need ts for protected mode to work
 
 
 
-for kernal we us x86 32-bit Assembly and the big C
+for kernal we us x86 32-bit Assembly and the big C  - baics of both will be uploaded here
+
 
