@@ -1,5 +1,3 @@
-cat > Makefile << 'EOF'
-
 all: os.img
 
 os.img: boot/boot.bin kernel/kernel.bin
@@ -17,12 +15,10 @@ kernel/kernel_entry.o: kernel/kernel_entry.asm
 kernel/kernel.o: kernel/kernel.c kernel/kernel.h
 	gcc -m32 -c -ffreestanding kernel/kernel.c -o kernel/kernel.o
 
-run: os.img               #emulator
+run: os.img
 	qemu-system-i386 -drive file=os.img,format=raw
-
 
 clean:
 	rm -f boot/*.bin kernel/*.o kernel/*.bin os.img
 
 .PHONY: all run clean
-EOF

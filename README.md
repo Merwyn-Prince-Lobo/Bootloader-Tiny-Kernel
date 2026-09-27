@@ -45,3 +45,17 @@ ls -l os.img
 
 # Should show something like: -rw-r--r-- 1 user user 65536 Aug 29 12:34 os.img i think 
 ```
+
+## Progress
+
+- [x] Phase 1: Bootloader prints to screen (real mode, BIOS int 0x10)
+- [x] Phase 2: Protected mode switch (A20, GDT, CR0, far jump, VRAM print)
+- [ ] Phase 3: Bootloader loads kernel from disk (int 0x13)
+- [ ] Phase 4: Console output system
+- [ ] Phase 5: Interrupt system (IDT)
+- [ ] Phase 6: Timer + task creation
+- [ ] Phase 7: Context switching
+- [ ] Phase 8: Full round-robin scheduler
+- [ ] Phase 9: Polish & testing
+
+See `architecture.md` for full roadmap.

@@ -15,7 +15,7 @@
 ---
 
 ## Registers
-
+ add
 ### **General Purpose Registers (32-bit)**
 
 ```asm
